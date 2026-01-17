@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thina's Tasty Treats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+ <!-- HEADER -->
+  <header class="site-header">
+    <h1>Thina's Tasty Treats</h1>
+    <p>Home-baked treats at your service</p>
+  </header>
+
+<!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order</a>
+    <a href="about.html">About</a>
+  </nav>
+
+<!-- ===== GALLERY PAGE ===== -->
+  <main class="page">
+  <section class="gallery-section">
+    <h2>Cakes</h2>
+
+    <div class="gallery">
+      <!-- Cakes -->
+       <div class="gallery-item">
+        <img src="images/cake1.jpg" alt="Cake 1" class="lightbox-trigger" loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/cake2.jpg" alt="Cake 2" class="lightbox-trigger" loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/cake3.jpg" alt="Cake 3" class="lightbox-trigger" loading="lazy">
+      </div>
+    </div>
+  </section>
+   
+   <!-- Cupcakes -->
+  <section class="gallery-section">
+    <h2>Cupcakes</h2>
+
+    <div class="gallery">
+      <div class="gallery-item">
+      <img src="images/plain_cupcakes.jpg" alt="Plain Cupcake" class="lightbox-trigger" loading="lazy">
+      </div>
+      <div class="gallery-item">
+      <img src="images/decorated_cupcakes.jpg" alt="Decorated Cupcake" class="lightbox-trigger" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+    
+
+    <!-- Scones -->
+    <section class="gallery-section">
+      <h2>Scones</h2>
+     
+      <div class="gallery">
+        <div class="gallery-item">
+        <img src="images/plain_scones.jpg" alt="Plain Scone" class="lightbox-trigger" loading="lazy">
+        </div>
+        <div class="gallery-item">
+        <img src="images/flavored_scones.jpg" alt="Flavored Scone" class="lightbox-trigger" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+      <!-- Cookies / Biscuits -->
+    <section class="gallery-section">
+        <h2>Cookies</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+            <img src="images/chocolate_chip_cookies.jpg" alt="Chocolate Chip Cookies" class="lightbox-trigger" loading="lazy">
+            <p>Chocolate Chip Cookies</p>
+            </div>
+            
+            <div class="gallery-item">
+            <img src="images/mixed_biscuits.jpg" alt="Mixed Biscuits" class="lightbox-trigger" loading="lazy">
+            <p>Mixed Biscuits</p>
+            </div>
+      
+            <div class="gallery-item">
+            <img src="images/eetsumore.jpg" alt="Eetsumore" class="lightbox-trigger" loading="lazy">
+            <p>Eetsumore</p>
+            </div>
+      
+            <div class="gallery-item">
+            <img src="images/romany_creams.jpg" alt="Romany Creams" class="lightbox-trigger" loading="lazy">
+            <p>Romany Creams</p>
+            </div>
+            <div class="gallery-item">
+            <img src="images/jam_tarts.jpg" alt="Jam Tarts" class="lightbox-trigger" loading="lazy">
+            <p>Jam Tarts</p>
+            </div>
+      
+            <div class="gallery-item">
+            <img src="images/coconut_biscuits.jpg" alt="Coconut Biscuits" class="lightbox-trigger" loading="lazy">
+            <p>Coconut Biscuits</p>
+            </div>
+            
+            <div class="gallery-item">
+            <img src="images/nuttikrust.jpg" alt="Nuttikrust" class="lightbox-trigger" loading="lazy">
+            <p>Nuttikrust</p>
+            </div>
+      
+            <div class="gallery-item">
+            <img src="images/ginger_biscuits.jpg" alt="Ginger Biscuits" class="lightbox-trigger" loading="lazy">
+            <p>Ginger Biscuits</p>
+            </div>
+        </div>
+    </section>
+    
+</main>
+
+<!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2025 Thina's Tasty Treats</p>
+    <p>📍 Based in Pretoria</p>
+    <p>Contact us: 081 387 3488</p>
+    <p>Follow us: 
+      <a href="https://www.instagram.com/thinasstastytreats" target="_blank">Instagram</a> | 
+      <a href="https://www.tiktok.com/@thinasstastytreats" target="_blank">TikTok</a>
+    </p>
+  </footer>
+
+<!-- LIGHTBOX OVERLAY (insert here, at the end of body) -->
+  <div class="lightbox-overlay" id="lightbox">
+    <img src="" alt="Expanded View">
+  </div>
+
+  <!-- LIGHTBOX JAVASCRIPT (also at the end of body) -->
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = lightbox.querySelector('img');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+
+    triggers.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+      });
+    });
+
+    // Click anywhere on overlay to close
+    lightbox.addEventListener('click', e => {
+      if (e.target !== lightboxImage) {
+        lightbox.classList.remove('active');
+        lightboxImage.src = '';
+        lightboxImage.alt = '';
+      }
+    });
+  </script>
+
+  <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/27813873488" class="whatsapp-float" target="_blank">
+  <img src="images/whatsapp.png" alt="WhatsApp">
+</a>
+
+</body>
+</html>

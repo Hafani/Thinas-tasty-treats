@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thina's Tasty Treats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER WITH LOGO -->
+  <header class="site-header">
+    <img src="images/logo.png" alt="Thina's Tasty Treats Logo" class="logo">
+    <h1>Thina's Tasty Treats</h1>
+    <p>Home-baked treats at your service</p>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="hero">
+      <h2>Fresh Home Baking for Every Occasion</h2>
+      <p>Cakes • Cookies • Scones • Special Treats</p>
+      <div class="hero-buttons">
+        <a href="order.html" class="btn">Order Now</a>
+        <a href="gallery.html" class="btn btn-secondary">View Gallery</a>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS / TEACHING -->
+    <section class="page baking-classes-section">
+      <h2>Baking Classes</h2>
+      <!-- <p>Mom teaching fellow student bakers the art of home baking!</p> -->
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="images/work.jpg" alt="Baking Class 1" class="lightbox-trigger" loading="lazy">
+          <div class="caption">Classes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENT CREATIONS -->
+    <section class="page featured-section">
+      <h2>Creations</h2>
+
+      <h3>Cakes</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="images/decor_cake.jpg" alt="Student Cake" class="lightbox-trigger" loading="lazy">
+          <div class="caption">Vanilla Celebration Cake</div>
+        </div>
+      </div>
+
+      <h3>Cupcakes</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="images/student_cupcakes.jpg" alt="Student Cupcake" class="lightbox-trigger" loading="lazy">
+          <div class="caption">Student cupcakes</div>
+        </div>
+      </div>
+
+      <!--<h3>Scones</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="images/student_scones.jpg." alt="Student Scones" class="lightbox-trigger" loading="lazy">
+          <div class="caption">Student scones</div>
+        </div>
+      </div> -->
+
+      <h3>Cookies</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="images/cookies_galore.jpg" alt="Cookies" class="lightbox-trigger" loading="lazy">
+          <div class="caption">Student cookies</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="page">
+      <h2>Book a Class or Order Your Treats!</h2>
+      <p>Join our baking classes or order your favorite homemade treats today.</p>
+      <a href="order.html" class="btn">Order Now</a>
+      <a href="gallery.html" class="btn btn-secondary">See More Creations</a>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div class="lightbox-overlay" id="lightbox">
+    <img src="" alt="Expanded View">
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2025 Thina's Tasty Treats</p>
+    <p>📍 Based in Pretoria</p>
+    <p>Contact us: 081 387 3488</p>
+    <p>Follow us: 
+      <a href="https://www.instagram.com/thinasstastytreats" target="_blank">Instagram</a> | 
+      <a href="https://www.tiktok.com/@thinasstastytreat" target="_blank">TikTok</a>
+    </p>
+  </footer>
+
+  <!-- LIGHTBOX SCRIPT -->
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = lightbox.querySelector('img');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+
+    triggers.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+      });
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target !== lightboxImage) {
+        lightbox.classList.remove('active');
+        lightboxImage.src = '';
+        lightboxImage.alt = '';
+      }
+    });
+  </script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/27813873488" class="whatsapp-float" target="_blank">
+  <img src="images/whatsapp.png" alt="WhatsApp">
+</a>
+
+
+</body>
+</html>
